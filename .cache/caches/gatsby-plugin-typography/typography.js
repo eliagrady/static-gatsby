@@ -1,0 +1,1 @@
+module.exports = require("/Users/Elia/Dev/gatsby/eliagrady/src/utils/typography")
