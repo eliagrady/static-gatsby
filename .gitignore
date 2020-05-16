@@ -1,1 +1,6 @@
+# For obvious reasons
 node_modules
+# Query cache
+.cache
+# Getting built in Onyx during deployment
+public

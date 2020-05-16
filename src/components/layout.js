@@ -1,10 +1,21 @@
 import React from "react"
 import { css } from "@emotion/core"
-import { Link } from "gatsby"
-
+import { useStaticQuery, Link, graphql } from "gatsby";
 import { rhythm } from "../utils/typography"
 
 export default function Layout({ children }) {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `
+  );
+
   return (
     <div
       css={css`
@@ -14,16 +25,14 @@ export default function Layout({ children }) {
         padding-top: ${rhythm(1.5)};
       `}
     >
-      <Link to={`/`}>
-        <h3
+      <Link to={`/`}
           css={css`
             margin-bottom: ${rhythm(2)};
             display: inline-block;
             font-style: normal;
           `}
         >
-          Pandas Eating Lots
-        </h3>
+          Home
       </Link>
       <Link
         to={`/about/`}
